@@ -10,11 +10,9 @@ const mondayWork = function (activity) {
     return `This Monday, I will ${activity}.`
 }
 function wrapAdjective (flair) {
-    const innerFunction = function (adjective) {
+    flair = (typeof flair !== 'undefined') ? flair : "*"
+    return function(adjective){
         adjective = (typeof adjective !== 'undefined') ? adjective : "special"
-        return `You are ${adjective}!`; 
-    };
-    flair = (typeof flair !== 'undefined') ? flair: "*"
-    
-    return 
-}
+        return `You are ${flair}${adjective}${flair}!`
+    }
+} 
